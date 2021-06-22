@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7073A7DCAAB1C65B43FC5D8A /* Pods_Maroof_Gold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9377B16D3052A08C3124AC1 /* Pods_Maroof_Gold.framework */; };
 		8A68CB12267E46A400C02BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68CB11267E46A400C02BAF /* AppDelegate.swift */; };
 		8A68CB14267E46A400C02BAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68CB13267E46A400C02BAF /* SceneDelegate.swift */; };
-		8A68CB16267E46A400C02BAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68CB15267E46A400C02BAF /* ViewController.swift */; };
 		8A68CB19267E46A400C02BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB17267E46A400C02BAF /* Main.storyboard */; };
 		8A68CB1B267E46A800C02BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB1A267E46A800C02BAF /* Assets.xcassets */; };
 		8A68CB1E267E46A800C02BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB1C267E46A800C02BAF /* LaunchScreen.storyboard */; };
+		8A9111AF26823ABE003B00C2 /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9111AE26823ABE003B00C2 /* PricesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A24E59E5D62EB85A877A7BB /* Pods-Maroof Gold.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroof Gold.debug.xcconfig"; path = "Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold.debug.xcconfig"; sourceTree = "<group>"; };
+		61D8854564379690A9578FE0 /* Pods-Maroof Gold.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroof Gold.release.xcconfig"; path = "Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold.release.xcconfig"; sourceTree = "<group>"; };
 		8A68CB0E267E46A400C02BAF /* Maroof Gold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maroof Gold.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A68CB11267E46A400C02BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A68CB13267E46A400C02BAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A68CB15267E46A400C02BAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A68CB18267E46A400C02BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A68CB1A267E46A800C02BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A68CB1D267E46A800C02BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A68CB1F267E46A800C02BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A9111AE26823ABE003B00C2 /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
+		C9377B16D3052A08C3124AC1 /* Pods_Maroof_Gold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maroof_Gold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7073A7DCAAB1C65B43FC5D8A /* Pods_Maroof_Gold.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				8A68CB10267E46A400C02BAF /* Maroof Gold */,
 				8A68CB0F267E46A400C02BAF /* Products */,
+				AEF6F886A37B41A60A9884AD /* Pods */,
+				9FE4AD85B78954D806DC85FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +64,31 @@
 			isa = PBXGroup;
 			children = (
 				8A68CB11267E46A400C02BAF /* AppDelegate.swift */,
+				8A9111AE26823ABE003B00C2 /* PricesViewController.swift */,
 				8A68CB13267E46A400C02BAF /* SceneDelegate.swift */,
-				8A68CB15267E46A400C02BAF /* ViewController.swift */,
 				8A68CB17267E46A400C02BAF /* Main.storyboard */,
 				8A68CB1A267E46A800C02BAF /* Assets.xcassets */,
 				8A68CB1C267E46A800C02BAF /* LaunchScreen.storyboard */,
 				8A68CB1F267E46A800C02BAF /* Info.plist */,
 			);
 			path = "Maroof Gold";
+			sourceTree = "<group>";
+		};
+		9FE4AD85B78954D806DC85FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9377B16D3052A08C3124AC1 /* Pods_Maroof_Gold.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEF6F886A37B41A60A9884AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A24E59E5D62EB85A877A7BB /* Pods-Maroof Gold.debug.xcconfig */,
+				61D8854564379690A9578FE0 /* Pods-Maroof Gold.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A68CB22267E46A800C02BAF /* Build configuration list for PBXNativeTarget "Maroof Gold" */;
 			buildPhases = (
+				B5F760082C60C2F2CBE2F727 /* [CP] Check Pods Manifest.lock */,
 				8A68CB0A267E46A400C02BAF /* Sources */,
 				8A68CB0B267E46A400C02BAF /* Frameworks */,
 				8A68CB0C267E46A400C02BAF /* Resources */,
+				B797136BFB7BE32E432E8AF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +158,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B5F760082C60C2F2CBE2F727 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Maroof Gold-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B797136BFB7BE32E432E8AF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A68CB0A267E46A400C02BAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A68CB16267E46A400C02BAF /* ViewController.swift in Sources */,
 				8A68CB12267E46A400C02BAF /* AppDelegate.swift in Sources */,
+				8A9111AF26823ABE003B00C2 /* PricesViewController.swift in Sources */,
 				8A68CB14267E46A400C02BAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +351,14 @@
 		};
 		8A68CB23267E46A800C02BAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A24E59E5D62EB85A877A7BB /* Pods-Maroof Gold.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JZ8X5DE42Y;
 				INFOPLIST_FILE = "Maroof Gold/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +366,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.muhammettahagenc.Maroof-Gold";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8A68CB24267E46A800C02BAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61D8854564379690A9578FE0 /* Pods-Maroof Gold.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JZ8X5DE42Y;
 				INFOPLIST_FILE = "Maroof Gold/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.muhammettahagenc.Maroof-Gold";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
