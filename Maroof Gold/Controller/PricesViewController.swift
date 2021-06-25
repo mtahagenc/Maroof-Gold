@@ -10,6 +10,7 @@ import RHSideButtons
 
 class PricesViewController: UIViewController {
 
+    var timer  = Timer()
     var sideButtonsView: RHSideButtons?
     var buttonsArr = [RHButtonView]()
     let triggerButton = RHTriggerButtonView(pressedImage: UIImage(named: "exit_icon")!) {
@@ -20,14 +21,39 @@ class PricesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSideButton()
+        getData()
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(getData), userInfo: nil, repeats: true)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         sideButtonsView?.setTriggerButtonPosition(CGPoint(x: self.view.frame.width - 85, y: self.view.frame.height - 85))
     }
     
+    @objc func getData() {
+        let url = URL(string: "https://www.haremaltin.com/ajax/all_prices")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = [
+            "X-Requested-With": "XMLHttpRequest"
+        ]
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let priceData: PriceModel = try! JSONDecoder().decode(PriceModel.self, from: data)
+                print(priceData.data?.ALTIN?.satis ?? "")
+            } else if let error = error {
+                print("HTTP Request Failed \(error)")
+            }
+        }
+        task.resume()
+    }
+    
+}
+
+extension PricesViewController: RHSideButtonsDataSource, RHSideButtonsDelegate {
+
     func addSideButton(){
         sideButtonsView = RHSideButtons(parentView: view, triggerButton: triggerButton)
         sideButtonsView?.delegate = self
@@ -55,10 +81,7 @@ class PricesViewController: UIViewController {
         //Similar as it is in TableView, now you should reload buttons with new values
         sideButtonsView?.reloadButtons()
     }
-}
-
-extension PricesViewController: RHSideButtonsDataSource {
-
+    
     func sideButtonsNumberOfButtons(_ sideButtons: RHSideButtons) -> Int {
         return buttonsArr.count
     }
@@ -66,10 +89,7 @@ extension PricesViewController: RHSideButtonsDataSource {
     func sideButtons(_ sideButtons: RHSideButtons, buttonAtIndex index: Int) -> RHButtonView {
         return buttonsArr[index]
     }
-}
-
-extension PricesViewController: RHSideButtonsDelegate {
-
+    
     func sideButtons(_ sideButtons: RHSideButtons, didSelectButtonAtIndex index: Int) {
         print("🍭 button index tapped: \(index)")
     }

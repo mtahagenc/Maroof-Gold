@@ -13,7 +13,10 @@
 		8A68CB19267E46A400C02BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB17267E46A400C02BAF /* Main.storyboard */; };
 		8A68CB1B267E46A800C02BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB1A267E46A800C02BAF /* Assets.xcassets */; };
 		8A68CB1E267E46A800C02BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB1C267E46A800C02BAF /* LaunchScreen.storyboard */; };
+		8A8E977C268385280036F243 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E977B268385280036F243 /* DataModel.swift */; };
 		8A9111AF26823ABE003B00C2 /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9111AE26823ABE003B00C2 /* PricesViewController.swift */; };
+		8ACC03962684DE5800DCB8A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC03952684DE5800DCB8A4 /* GoogleService-Info.plist */; };
+		8AFDE436268496A100279F7E /* PublicURLsAndHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFDE435268496A100279F7E /* PublicURLsAndHeaders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +29,10 @@
 		8A68CB1A267E46A800C02BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A68CB1D267E46A800C02BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A68CB1F267E46A800C02BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8E977B268385280036F243 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8A9111AE26823ABE003B00C2 /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
+		8ACC03952684DE5800DCB8A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8AFDE435268496A100279F7E /* PublicURLsAndHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicURLsAndHeaders.swift; sourceTree = "<group>"; };
 		C9377B16D3052A08C3124AC1 /* Pods_Maroof_Gold.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maroof_Gold.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -42,6 +48,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A5DBF862684910700DBECD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A8E977B268385280036F243 /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8A5DBF872684913000DBECD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A68CB17267E46A400C02BAF /* Main.storyboard */,
+				8A68CB1C267E46A800C02BAF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A5DBF882684913B00DBECD7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A9111AE26823ABE003B00C2 /* PricesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8A68CB05267E46A400C02BAF = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +95,24 @@
 			isa = PBXGroup;
 			children = (
 				8A68CB11267E46A400C02BAF /* AppDelegate.swift */,
-				8A9111AE26823ABE003B00C2 /* PricesViewController.swift */,
 				8A68CB13267E46A400C02BAF /* SceneDelegate.swift */,
-				8A68CB17267E46A400C02BAF /* Main.storyboard */,
+				8AFDE438268496A700279F7E /* Publics */,
+				8A5DBF862684910700DBECD7 /* Model */,
+				8A5DBF872684913000DBECD7 /* View */,
+				8A5DBF882684913B00DBECD7 /* Controller */,
 				8A68CB1A267E46A800C02BAF /* Assets.xcassets */,
-				8A68CB1C267E46A800C02BAF /* LaunchScreen.storyboard */,
+				8ACC03952684DE5800DCB8A4 /* GoogleService-Info.plist */,
 				8A68CB1F267E46A800C02BAF /* Info.plist */,
 			);
 			path = "Maroof Gold";
+			sourceTree = "<group>";
+		};
+		8AFDE438268496A700279F7E /* Publics */ = {
+			isa = PBXGroup;
+			children = (
+				8AFDE435268496A100279F7E /* PublicURLsAndHeaders.swift */,
+			);
+			path = Publics;
 			sourceTree = "<group>";
 		};
 		9FE4AD85B78954D806DC85FF /* Frameworks */ = {
@@ -151,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A68CB1E267E46A800C02BAF /* LaunchScreen.storyboard in Resources */,
+				8ACC03962684DE5800DCB8A4 /* GoogleService-Info.plist in Resources */,
 				8A68CB1B267E46A800C02BAF /* Assets.xcassets in Resources */,
 				8A68CB19267E46A400C02BAF /* Main.storyboard in Resources */,
 			);
@@ -205,9 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8E977C268385280036F243 /* DataModel.swift in Sources */,
 				8A68CB12267E46A400C02BAF /* AppDelegate.swift in Sources */,
 				8A9111AF26823ABE003B00C2 /* PricesViewController.swift in Sources */,
 				8A68CB14267E46A400C02BAF /* SceneDelegate.swift in Sources */,
+				8AFDE436268496A100279F7E /* PublicURLsAndHeaders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
