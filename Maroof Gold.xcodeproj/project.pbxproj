@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7073A7DCAAB1C65B43FC5D8A /* Pods_Maroof_Gold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9377B16D3052A08C3124AC1 /* Pods_Maroof_Gold.framework */; };
+		8A05DE9D26861E63004BC542 /* MultipliersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A05DE9C26861E63004BC542 /* MultipliersViewController.swift */; };
+		8A23E00726862AA0001D76C6 /* PricesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A23E00526862AA0001D76C6 /* PricesTableViewCell.swift */; };
 		8A68CB12267E46A400C02BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68CB11267E46A400C02BAF /* AppDelegate.swift */; };
 		8A68CB14267E46A400C02BAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68CB13267E46A400C02BAF /* SceneDelegate.swift */; };
 		8A68CB19267E46A400C02BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A68CB17267E46A400C02BAF /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		1A24E59E5D62EB85A877A7BB /* Pods-Maroof Gold.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroof Gold.debug.xcconfig"; path = "Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold.debug.xcconfig"; sourceTree = "<group>"; };
 		61D8854564379690A9578FE0 /* Pods-Maroof Gold.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroof Gold.release.xcconfig"; path = "Target Support Files/Pods-Maroof Gold/Pods-Maroof Gold.release.xcconfig"; sourceTree = "<group>"; };
+		8A05DE9C26861E63004BC542 /* MultipliersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipliersViewController.swift; sourceTree = "<group>"; };
+		8A23E00526862AA0001D76C6 /* PricesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesTableViewCell.swift; sourceTree = "<group>"; };
 		8A68CB0E267E46A400C02BAF /* Maroof Gold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Maroof Gold.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A68CB11267E46A400C02BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A68CB13267E46A400C02BAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A23E00A26862AA7001D76C6 /* PricesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8A23E00526862AA0001D76C6 /* PricesTableViewCell.swift */,
+			);
+			path = PricesTableViewCell;
+			sourceTree = "<group>";
+		};
 		8A5DBF862684910700DBECD7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				8A9111AE26823ABE003B00C2 /* PricesViewController.swift */,
+				8A05DE9C26861E63004BC542 /* MultipliersViewController.swift */,
+				8A23E00A26862AA7001D76C6 /* PricesTableViewCell */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,10 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A8E977C268385280036F243 /* DataModel.swift in Sources */,
+				8A23E00726862AA0001D76C6 /* PricesTableViewCell.swift in Sources */,
 				8A68CB12267E46A400C02BAF /* AppDelegate.swift in Sources */,
 				8A9111AF26823ABE003B00C2 /* PricesViewController.swift in Sources */,
 				8A68CB14267E46A400C02BAF /* SceneDelegate.swift in Sources */,
 				8AFDE436268496A100279F7E /* PublicURLsAndHeaders.swift in Sources */,
+				8A05DE9D26861E63004BC542 /* MultipliersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
