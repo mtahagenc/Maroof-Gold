@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2FI-Ny-IJl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -172,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feyza Kuyumculuk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbd-tf-mOj">
-                                        <rect key="frame" x="10" y="30" width="394" height="50"/>
+                                        <rect key="frame" x="10" y="40" width="394" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Y82-25-b8R"/>
                                         </constraints>
@@ -203,13 +203,24 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bölge Seç" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-Sa-Pru">
+                                        <rect key="frame" x="8" y="8" width="108" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="AxZ-Jk-2B2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="3hm-xC-8VZ"/>
+                                    <constraint firstItem="rz0-Sa-Pru" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="8" id="7G4-TX-ZpX"/>
                                     <constraint firstItem="Jh2-tf-8e6" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="20" id="7pM-7P-UhI"/>
-                                    <constraint firstItem="Bbd-tf-mOj" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="30" id="AMh-jl-dSl"/>
+                                    <constraint firstItem="Bbd-tf-mOj" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="40" id="AMh-jl-dSl"/>
                                     <constraint firstAttribute="bottom" secondItem="Jh2-tf-8e6" secondAttribute="bottom" constant="10" id="RKt-A8-3wg"/>
+                                    <constraint firstItem="rz0-Sa-Pru" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="8" id="Srw-Pa-g88"/>
                                     <constraint firstItem="Bbd-tf-mOj" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="10" id="dPJ-dy-SO0"/>
                                     <constraint firstAttribute="trailing" secondItem="Bbd-tf-mOj" secondAttribute="trailing" constant="10" id="emH-rD-Wek"/>
                                     <constraint firstAttribute="trailing" secondItem="Jh2-tf-8e6" secondAttribute="trailing" constant="20" id="ngI-YJ-iu6"/>
@@ -278,21 +289,22 @@
                         <constraints>
                             <constraint firstItem="BIF-lW-egQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hc2-v9-B11"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BIF-lW-egQ" secondAttribute="trailing" id="SLi-0U-JW7"/>
-                            <constraint firstItem="prc-wy-4Fc" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="bottom" id="Vez-NM-Gsx"/>
                             <constraint firstAttribute="bottom" secondItem="prc-wy-4Fc" secondAttribute="bottom" id="a1I-gN-yl7"/>
                             <constraint firstItem="prc-wy-4Fc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b42-sV-dqz"/>
                             <constraint firstItem="BIF-lW-egQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bJB-1b-Btt"/>
+                            <constraint firstItem="prc-wy-4Fc" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="bottom" id="tzA-e1-2Qh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="prc-wy-4Fc" secondAttribute="trailing" id="z3L-gm-COh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qee-OH-UHj"/>
                     <connections>
+                        <outlet property="placesDropDown" destination="rz0-Sa-Pru" id="CWs-6i-UiJ"/>
                         <outlet property="tableView" destination="prc-wy-4Fc" id="bXk-fP-zRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="84"/>
+            <point key="canvasLocation" x="269.56521739130437" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>

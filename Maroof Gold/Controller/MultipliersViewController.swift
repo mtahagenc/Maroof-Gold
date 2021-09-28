@@ -9,6 +9,8 @@ import UIKit
 import FirebaseDatabase
 
 class MultipliersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: - Variables and Constants
     @IBOutlet weak var tableView: UITableView!
     var namesArr = ["Bilezik", "Yeni Ceyrek", "Eski Ceyrek", "Yeni Yarim", "Eski Yarim", "Yeni Tam", "Eski Tam", "Ata Lirasi", "Gram (22)", "Gram (24)"]
     var ref : DatabaseReference!
@@ -16,6 +18,26 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
     var satisMultipliers : [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     let firNames = ["bilezikAlis","bilezikSatis","yeniCeyrekAlis","yeniCeyrekSatis","eskiCeyrekAlis","eskiCeyrekSatis","yeniYarimAlis","yeniYarimSatis","eskiYarimAlis","eskiYarimSatis","yeniTamAlis","yeniTamSatis","eskiTamAlis","eskiTamSatis","ataAlis","ataSatis","22GramlikAlis","22GramlikSatis","24GramlikAlis","24GramlikSatis"]
     
+    //MARK: - View Functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .white
+        getFirebaseData()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         self.addKeyboardObserver()
+        
+    }
+
+     override func viewWillDisappear(_ animated: Bool) {
+         self.removeKeyboardObserver()
+     }
+    
+    //MARK: - TableView Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return namesArr.count
     }
@@ -40,6 +62,7 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
         return height
     }
     
+    //MARK: - Functions
     func getFirebaseData() {
         //1. Change the database url because sometimes non US users can not fetch data from database
         ref = Database.database(url: "https://maroof-gold-default-rtdb.europe-west1.firebasedatabase.app").reference()
@@ -94,24 +117,6 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = .white
-        getFirebaseData()
-        hideKeyboardWhenTappedAround()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-         self.addKeyboardObserver()
-        
-    }
-
-     override func viewWillDisappear(_ animated: Bool) {
-         self.removeKeyboardObserver()
-     }
-    
     @IBAction func doneBtn(_ sender: Any) {
         alisMultipliers.removeAll()
         satisMultipliers.removeAll()
@@ -134,14 +139,13 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
                 print("An error has occured")
             }
         }
-        
-        
         print(alisMultipliers)
         print(satisMultipliers)
         performSegue(withIdentifier: "showPrices", sender: self)
     }
 }
 
+//MARK: - Extensions
 extension UIViewController {
     //An extension used to hide the keyboard
     func hideKeyboardWhenTappedAround() {

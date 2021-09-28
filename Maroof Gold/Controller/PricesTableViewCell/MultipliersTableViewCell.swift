@@ -26,7 +26,7 @@ class MultipliersTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        //In the decimal pad there is "," instead of "." but we cannot use "," in double so we change the it with "." everytime it typed.
+        //In the decimal pad there is "," instead of "." but we cannot use "," in double so we change it with "." everytime it typed.
         if string == "," {
             textField.text = textField.text! + "."
             return false

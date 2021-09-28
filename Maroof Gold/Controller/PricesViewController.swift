@@ -8,15 +8,19 @@
 import UIKit
 import FirebaseDatabase
 
-class PricesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PricesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var placesDropDown: UITextField!
     var namesArr = ["Bilezik", "Yeni Ceyrek", "Eski Ceyrek", "Yeni Yarim", "Eski Yarim", "Yeni Tam", "Eski Tam", "Ata Lirasi", "Gram (22)", "Gram (24)"]
     var alisMultipliers : [Double?] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var satisMultipliers : [Double?] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var priceData: PriceModel?
-    @IBOutlet weak var tableView: UITableView!
     var ref : DatabaseReference!
+    var selectedCountry: String?
+    var countryList = ["Algeria", "Andorra", "Angola", "India", "Thailand"]
 
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -24,20 +28,50 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
+        createPickerView()
+        dismissPickerView()
     }
     
+    //MARK: UIPickerView Functions
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1 //number of session
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryList.count //number of dropdown items
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryList[row] //dropdown item
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCountry = countryList[row] // selected item
+        placesDropDown.text = selectedCountry
+    }
+    func createPickerView() {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        placesDropDown.inputView = pickerView
+    }
+    func dismissPickerView() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let button = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(self.action))
+        toolBar.setItems([button], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        placesDropDown.inputAccessoryView = toolBar
+    }
+    @objc func action() {
+          view.endEditing(true)
+    }
+
     //MARK: TableView Functions
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return namesArr.count
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let height = self.tableView.frame.height / CGFloat(namesArr.count)
         
         return height
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PricesTableViewCell
         cell.name.layer.cornerRadius = 6
@@ -59,6 +93,7 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    //MARK: - Functions
     @objc func getData() {
         //We are getting the base gold prices from a website to calculate the product's prices.
         
@@ -78,7 +113,6 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
         }
         task.resume()
     }
-    
     func getFirebaseData () {
         //1. Change the database url because sometimes non US users can not fetch data from database
         ref = Database.database(url: "https://maroof-gold-default-rtdb.europe-west1.firebasedatabase.app").reference()
