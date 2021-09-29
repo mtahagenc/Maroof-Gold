@@ -15,21 +15,24 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
     var namesArr = ["Bilezik", "Yeni Ceyrek", "Eski Ceyrek", "Yeni Yarim", "Eski Yarim", "Yeni Tam", "Eski Tam", "Ata Lirasi", "Gram (22)", "Gram (24)"]
     var alisMultipliers : [Double?] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var satisMultipliers : [Double?] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var places : [String?] = []
     var priceData: PriceModel?
-    var ref : DatabaseReference!
-    var selectedCountry: String?
-    var countryList = ["Algeria", "Andorra", "Angola", "India", "Thailand"]
+    //1. Change the database url because sometimes non US users can not fetch data from database
+    var ref = Database.database(url: "https://maroof-gold-default-rtdb.europe-west1.firebasedatabase.app").reference()
+    var selectedPlace: String?
 
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        getURLData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.white
         tableView.separatorStyle = .none
         createPickerView()
         dismissPickerView()
+        getPlaces()
+        getFirebaseData(place: "Gop")
     }
     
     //MARK: UIPickerView Functions
@@ -37,14 +40,15 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
         return 1 //number of session
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countryList.count //number of dropdown items
+        return places.count //number of dropdown items
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return countryList[row] //dropdown item
+        return places[row] //dropdown item
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCountry = countryList[row] // selected item
-        placesDropDown.text = selectedCountry
+        selectedPlace = places[row] // selected item
+        placesDropDown.text = selectedPlace ?? "Sultangazi"
+        getFirebaseData(place: selectedPlace ?? "Sultangazi")
     }
     func createPickerView() {
         let pickerView = UIPickerView()
@@ -60,7 +64,7 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
         placesDropDown.inputAccessoryView = toolBar
     }
     @objc func action() {
-          view.endEditing(true)
+        view.endEditing(true)
     }
 
     //MARK: TableView Functions
@@ -94,7 +98,7 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     //MARK: - Functions
-    @objc func getData() {
+    @objc func getURLData() {
         //We are getting the base gold prices from a website to calculate the product's prices.
         
         let url = URL(string: "https://www.haremaltin.com/ajax/all_prices")
@@ -106,19 +110,24 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 self.priceData = try! JSONDecoder().decode(PriceModel.self, from: data)
-                self.getFirebaseData()
             } else if let error = error {
                 print("HTTP Request Failed \(error)")
             }
         }
         task.resume()
     }
-    func getFirebaseData () {
-        //1. Change the database url because sometimes non US users can not fetch data from database
-        ref = Database.database(url: "https://maroof-gold-default-rtdb.europe-west1.firebasedatabase.app").reference()
-        
+    func getPlaces() {
+        ref.child("places").observe(.value) { (snapShot) in
+            for child in snapShot.children{
+                let data = child as! DataSnapshot
+                self.places.append(data.key)
+            }
+            print(self.places)
+        }
+    }
+    func getFirebaseData (place: String) {
         //2. Observe the value within the child in the database
-        ref.child("multipliers").observe(.value) {(snapshot) in
+        ref.child("places").child(place).child("multipliers").observe(.value) {(snapshot) in
             //3. Check if there is a snapshot
             if let snapshotValue = snapshot.value as? [String:Any] {
                 //4. Remove all the multipliers

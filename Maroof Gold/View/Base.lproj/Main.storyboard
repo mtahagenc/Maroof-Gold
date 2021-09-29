@@ -153,7 +153,6 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="JJS-ab-26E" id="ESW-9y-BQC"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showPrices" id="sxs-r9-6jp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfV-zd-S1n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -165,11 +164,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PricesViewController" customModule="Maroof_Gold" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIF-lW-egQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feyza Kuyumculuk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbd-tf-mOj">
                                         <rect key="frame" x="10" y="40" width="394" height="50"/>
@@ -192,42 +191,56 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alış" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uua-fy-LIh">
                                                 <rect key="frame" x="128" y="0.0" width="118" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Satış" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsR-8M-MHX">
                                                 <rect key="frame" x="256" y="0.0" width="118" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bölge Seç" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-Sa-Pru">
-                                        <rect key="frame" x="8" y="8" width="108" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Gop" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rz0-Sa-Pru">
+                                        <rect key="frame" x="345" y="8" width="61" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="AxZ-Jk-2B2"/>
+                                            <constraint firstAttribute="height" constant="34" id="0qe-h6-ThY"/>
                                         </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bee-vR-8Uq">
+                                        <rect key="frame" x="8" y="13" width="34" height="24.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="2cx-9L-C7T"/>
+                                            <constraint firstAttribute="width" constant="34" id="g72-2B-Rb1"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="line.horizontal.3" catalog="system">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="3hm-xC-8VZ"/>
-                                    <constraint firstItem="rz0-Sa-Pru" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="8" id="7G4-TX-ZpX"/>
                                     <constraint firstItem="Jh2-tf-8e6" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="20" id="7pM-7P-UhI"/>
+                                    <constraint firstAttribute="trailing" secondItem="rz0-Sa-Pru" secondAttribute="trailing" constant="8" id="AJP-Ka-wq2"/>
                                     <constraint firstItem="Bbd-tf-mOj" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="40" id="AMh-jl-dSl"/>
                                     <constraint firstAttribute="bottom" secondItem="Jh2-tf-8e6" secondAttribute="bottom" constant="10" id="RKt-A8-3wg"/>
-                                    <constraint firstItem="rz0-Sa-Pru" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="8" id="Srw-Pa-g88"/>
+                                    <constraint firstItem="bee-vR-8Uq" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="8" id="YfC-qe-xO7"/>
+                                    <constraint firstItem="bee-vR-8Uq" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="8" id="bXQ-gt-ARX"/>
                                     <constraint firstItem="Bbd-tf-mOj" firstAttribute="leading" secondItem="BIF-lW-egQ" secondAttribute="leading" constant="10" id="dPJ-dy-SO0"/>
+                                    <constraint firstItem="rz0-Sa-Pru" firstAttribute="top" secondItem="BIF-lW-egQ" secondAttribute="top" constant="8" id="ejt-co-VDF"/>
                                     <constraint firstAttribute="trailing" secondItem="Bbd-tf-mOj" secondAttribute="trailing" constant="10" id="emH-rD-Wek"/>
                                     <constraint firstAttribute="trailing" secondItem="Jh2-tf-8e6" secondAttribute="trailing" constant="20" id="ngI-YJ-iu6"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="prc-wy-4Fc">
-                                <rect key="frame" x="0.0" y="120" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="164" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="9t1-K4-bSG" customClass="PricesTableViewCell" customModule="Maroof_Gold" customModuleProvider="target">
@@ -308,6 +321,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
