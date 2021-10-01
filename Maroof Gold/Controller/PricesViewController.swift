@@ -20,6 +20,10 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
     //1. Change the database url because sometimes non US users can not fetch data from database
     var ref = Database.database(url: "https://maroof-gold-default-rtdb.europe-west1.firebasedatabase.app").reference()
     var selectedPlace: String?
+    @IBAction func goToSıgnInBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "showSignIn", sender: self)
+    }
+    
 
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -122,7 +126,6 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
                 let data = child as! DataSnapshot
                 self.places.append(data.key)
             }
-            print(self.places)
         }
     }
     func getFirebaseData (place: String) {
