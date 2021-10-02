@@ -205,25 +205,46 @@
                                     <constraint firstItem="QaQ-nZ-1Bv" firstAttribute="leading" secondItem="qgO-UJ-Vbh" secondAttribute="leading" id="qjq-Ff-OLv"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maroof Gold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuP-IO-ole">
-                                <rect key="frame" x="10" y="160" width="394" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-jg-qIK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="333"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maroof Gold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ax0-Bd-5X8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="333"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="bHD-6i-j22"/>
-                                    <constraint firstAttribute="height" constant="50" id="sVW-0t-JSc"/>
+                                    <constraint firstItem="ax0-Bd-5X8" firstAttribute="centerY" secondItem="WpY-jg-qIK" secondAttribute="centerY" id="QjI-G9-dIk"/>
+                                    <constraint firstItem="ax0-Bd-5X8" firstAttribute="centerX" secondItem="WpY-jg-qIK" secondAttribute="centerX" id="u6O-UJ-fBD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epw-oD-DYm">
+                                <rect key="frame" x="128" y="768" width="266" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="nDj-aP-AGr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Bölge oluşturmak için bize ulaşın.">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="mailToUsBtn:" destination="JQV-0G-bQ3" eventType="touchUpInside" id="KgJ-nx-m5P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X9Y-6o-cOj"/>
                         <color key="backgroundColor" red="0.23403768729999999" green="0.429484753" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="X9Y-6o-cOj" firstAttribute="trailing" secondItem="RuP-IO-ole" secondAttribute="trailing" constant="10" id="7W0-QF-2a3"/>
-                            <constraint firstItem="RuP-IO-ole" firstAttribute="top" secondItem="X9Y-6o-cOj" secondAttribute="top" constant="160" id="I81-4M-3iD"/>
-                            <constraint firstItem="RuP-IO-ole" firstAttribute="leading" secondItem="X9Y-6o-cOj" secondAttribute="leading" constant="10" id="IZh-Yg-rpK"/>
+                            <constraint firstItem="X9Y-6o-cOj" firstAttribute="trailing" secondItem="epw-oD-DYm" secondAttribute="trailing" constant="20" id="4vl-1n-qb8"/>
+                            <constraint firstItem="X9Y-6o-cOj" firstAttribute="trailing" secondItem="WpY-jg-qIK" secondAttribute="trailing" id="RbG-66-1Mv"/>
                             <constraint firstItem="qgO-UJ-Vbh" firstAttribute="centerX" secondItem="X9Y-6o-cOj" secondAttribute="centerX" id="U3t-n9-8wB"/>
+                            <constraint firstItem="WpY-jg-qIK" firstAttribute="leading" secondItem="X9Y-6o-cOj" secondAttribute="leading" id="giB-My-Z5e"/>
+                            <constraint firstItem="X9Y-6o-cOj" firstAttribute="bottom" secondItem="epw-oD-DYm" secondAttribute="bottom" constant="20" id="kHW-Po-Geo"/>
                             <constraint firstItem="qgO-UJ-Vbh" firstAttribute="centerY" secondItem="X9Y-6o-cOj" secondAttribute="centerY" id="nqI-Qp-0jz"/>
+                            <constraint firstItem="WpY-jg-qIK" firstAttribute="top" secondItem="X9Y-6o-cOj" secondAttribute="top" id="sx7-H6-OGs"/>
+                            <constraint firstItem="qgO-UJ-Vbh" firstAttribute="top" secondItem="WpY-jg-qIK" secondAttribute="bottom" id="z02-tt-L86"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ggN-mc-AyQ"/>
@@ -398,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693" y="84"/>
+            <point key="canvasLocation" x="757" y="84"/>
         </scene>
     </scenes>
     <resources>
