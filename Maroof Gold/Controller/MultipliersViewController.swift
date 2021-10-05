@@ -13,6 +13,7 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
     
     //MARK: - Variables and Constants
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var placesTextField: UITextField!
     var namesArr = ["Bilezik", "Yeni Ceyrek", "Eski Ceyrek", "Yeni Yarim", "Eski Yarim", "Yeni Tam", "Eski Tam", "Ata Lirasi", "Gram (22)", "Gram (24)"]
     var ref : DatabaseReference!
     var alisMultipliers : [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

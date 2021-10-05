@@ -42,8 +42,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    @IBAction func forgetPassword(_ sender: UIButton) {
-        
+    @IBAction func forgetPassword(_ sender: UIButton) {        
+        Auth.auth().sendPasswordReset(withEmail: userNameTextField.text ?? "") { error in
+            if let error = error {
+                self.present(self.alertFunction(message: "Lütfen değiştirmek istediğiniz mail adresinizi yazınız."), animated: true, completion: nil)
+                print(error)
+            } else {
+                self.present(self.alertFunction(message: "Şifre değiştirme isteğiniz alınmıştır."), animated: true, completion: nil)
+            }
+        }
     }
     @IBAction func mailToUsBtn(_ sender: UIButton) {
     }
