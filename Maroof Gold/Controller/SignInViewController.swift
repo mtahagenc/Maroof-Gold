@@ -42,7 +42,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    @IBAction func forgetPassword(_ sender: UIButton) {        
+    @IBAction func forgetPassword(_ sender: UIButton) {
         Auth.auth().sendPasswordReset(withEmail: userNameTextField.text ?? "") { error in
             if let error = error {
                 self.present(self.alertFunction(message: "Lütfen değiştirmek istediğiniz mail adresinizi yazınız."), animated: true, completion: nil)
@@ -53,6 +53,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func mailToUsBtn(_ sender: UIButton) {
+        let supportEmail = "maroofinc@gmail.com"
+        if let emailURL = URL(string: "mailto:\(supportEmail)"), UIApplication.shared.canOpenURL(emailURL)
+        {
+            UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
