@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class MultipliersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -17,6 +18,7 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
     var alisMultipliers : [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var satisMultipliers : [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     let firNames = ["bilezikAlis","bilezikSatis","yeniCeyrekAlis","yeniCeyrekSatis","eskiCeyrekAlis","eskiCeyrekSatis","yeniYarimAlis","yeniYarimSatis","eskiYarimAlis","eskiYarimSatis","yeniTamAlis","yeniTamSatis","eskiTamAlis","eskiTamSatis","ataAlis","ataSatis","22GramlikAlis","22GramlikSatis","24GramlikAlis","24GramlikSatis"]
+    let userDefault = UserDefaults.standard
     
     //MARK: - View Functions
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .white
-        getFirebaseData()
+//        getFirebaseData()   
         hideKeyboardWhenTappedAround()
     }
     
@@ -142,5 +144,15 @@ class MultipliersViewController: UIViewController, UITableViewDataSource, UITabl
         print(alisMultipliers)
         print(satisMultipliers)
         performSegue(withIdentifier: "showPrices", sender: self)
+    }
+    
+    @IBAction func exitBtnPressed(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            self.userDefault.setValue(false, forKey: "userSignedIn")
+            self.dismiss(animated: true, completion: nil)
+        } catch let error {
+            print(error)
+        }
     }
 }

@@ -12,29 +12,53 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     let activityIndicator = UIActivityIndicatorView()
+    let userDefaults = UserDefaults.standard
     
     @IBAction func signInBtn(_ sender: UIButton) {
+        self.view.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         if userNameTextField.text == "" {
-            print("empty username")
+            present(alertFunction(message: "Mail adresi alanı boş bırakılamaz."), animated: true, completion: nil)
+            activityIndicator.stopAnimating()
+            self.view.isUserInteractionEnabled = true
         } else if passwordTextField.text == ""{
-            print("empty password")
+            present(alertFunction(message: "Şifre alanı boş bırakılamaz."), animated: true, completion: nil)
+            activityIndicator.stopAnimating()
+            self.view.isUserInteractionEnabled = true
         } else {
             Auth.auth().signIn(withEmail: userNameTextField.text!, password: passwordTextField.text!) { (authResult, error) in
                 if error != nil {
+                    self.present(self.alertFunction(message: "Giriş yapılırken bir hata oluştu."), animated: true, completion: nil)
+                    self.activityIndicator.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
                     print(error ?? "An error occured while signing in")
+                } else {
+                    self.activityIndicator.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                    self.dismiss(animated: true, completion: nil)
+                    self.userDefaults.setValue(true, forKey: "userSignedIn")
                 }
             }
         }
     }
+    @IBAction func forgetPassword(_ sender: UIButton) {
+        
+    }
     @IBAction func mailToUsBtn(_ sender: UIButton) {
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         self.hideKeyboardWhenTappedAround()
+        
+        // Activity Indicator stuff
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        self.view.addSubview(activityIndicator)
+        
         // These methods are added to move the view up to the keyboard size.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)

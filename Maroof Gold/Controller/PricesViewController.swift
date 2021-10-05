@@ -12,6 +12,7 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var placesDropDown: UITextField!
+    let userDefault = UserDefaults.standard
     var namesArr = ["Bilezik", "Yeni Ceyrek", "Eski Ceyrek", "Yeni Yarim", "Eski Yarim", "Yeni Tam", "Eski Tam", "Ata Lirasi", "Gram (22)", "Gram (24)"]
     var alisMultipliers : [Double?] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var satisMultipliers : [Double?] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -21,7 +22,11 @@ class PricesViewController: UIViewController, UITableViewDataSource, UITableView
     var ref = Database.database(url: "https://maroof-gold-default-rtdb.europe-west1.firebasedatabase.app").reference()
     var selectedPlace: String?
     @IBAction func goToSıgnInBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: "showSignIn", sender: self)
+        if userDefault.bool(forKey: "userSignedIn") == true {
+            performSegue(withIdentifier: "showMultipliers", sender: self)
+        } else {
+            performSegue(withIdentifier: "showSignIn", sender: self)
+        }
     }
     
 
