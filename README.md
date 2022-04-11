@@ -1,5 +1,5 @@
 # Maroof-Gold
-This app helps to calculate the selling and purchasing prices of Turkish gold coins for jewelry shops.
+This app helps to calculate the selling and purchasing prices of Turkish gold coins for jewelry shops. The prices can be seen without signing up but if a user wants to change the price he or she have to sign up to the app.
 
 
 ## Libraries
